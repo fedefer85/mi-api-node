@@ -17,8 +17,16 @@ app.get("/", (req, res) => {
 });
 //
 
-app.listen(3000, () => {
-  console.log("Servidor corriendo en http://localhost:3000");
+// esto lo modifico cuando paso a etapa de DEPLOY en la web
+// app.listen(3000, () => {
+//   console.log("Servidor corriendo en http://localhost:3000");
+// });
+
+// para DEPLOY en render:
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });
 
 // agregado para el errorHandler
