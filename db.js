@@ -9,14 +9,25 @@ const { Pool } = require("pg");
 // });
 
 // modificado para no hardcodear credenciales
+// const pool = new Pool({
+//   user: process.env.DB_USER,
+//   host: process.env.DB_HOST,
+//   database: process.env.DB_NAME,
+//   password: process.env.DB_PASSWORD,
+//   port: process.env.DB_PORT
+// });
+
+// MODIFICADO para usar en RENDER menos variables de environmet
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT
+connectionString: process.env.DATABASE_URL,
+ssl: {
+rejectUnauthorized: false
+}
 });
 
 module.exports = pool;
+
+
+
 
 // console.log("PASSWORD:", process.env.DB_PASSWORD);
