@@ -27,7 +27,5 @@ rejectUnauthorized: false
 
 module.exports = pool;
 
-
-
-
 // console.log("PASSWORD:", process.env.DB_PASSWORD);
+console.log("DATABASE_URL:", process.env.DATABASE_URL);
