@@ -1,4 +1,4 @@
-# API de Usuarios - Node.js + PostgreSQL
+# API REST con CRUD completo de usuarios, persistencia en PostgreSQL y deploy en la nube.
 
 API REST desarrollada con Node.js y Express que permite gestionar usuarios (crear, listar, editar y eliminar) conectada a una base de datos PostgreSQL deployada en la nube.
 
@@ -93,11 +93,11 @@ DELETE /usuarios/:id
 
 ## Aprendizajes
 
-* Creación de APIs REST con Express
-* Conexión a PostgreSQL
-* Uso de variables de entorno
-* Deploy de aplicaciones en la nube
-* Manejo de errores en backend
+* Desarrollo de APIs REST con Express
+* Integración con PostgreSQL en la nube
+* Uso de variables de entorno para configuración segura
+* Deploy de aplicaciones backend en Render
+* Manejo de errores y debugging en entorno real
 
 ---
 
