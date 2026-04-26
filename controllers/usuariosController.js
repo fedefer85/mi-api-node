@@ -16,7 +16,8 @@ const getUsuarios = async (req, res) => {
   console.log("GET /usuarios desde DB");
 
   try {
-    const result = await pool.query("SELECT * FROM usuarios");
+    // const result = await pool.query("SELECT * FROM usuarios");
+    const result = await pool.query("SELECT * FROM usuarios ORDER BY id ASC");
 
     console.log("Resultado DB:", result.rows);
 
