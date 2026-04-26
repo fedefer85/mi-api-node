@@ -144,6 +144,11 @@ button:hover {
   }
 }
 
+.acciones {
+  display: flex;
+  gap: 10px;
+}
+
 .btn-guardar {
   background: #3b82f6;
   color: white;
