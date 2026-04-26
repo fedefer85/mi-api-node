@@ -38,8 +38,18 @@ async function cargarUsuarios() {
 
       li.appendChild(spanId);
       li.appendChild(input);
-      li.appendChild(btnGuardar);
-      li.appendChild(btnEliminar);
+      
+      // li.appendChild(btnGuardar);
+      // li.appendChild(btnEliminar);
+      
+      // modificado para mejor visibilidad en celular
+      const acciones = document.createElement("div");
+      acciones.className = "acciones";
+
+      acciones.appendChild(btnGuardar);
+      acciones.appendChild(btnEliminar);
+
+      li.appendChild(acciones);
 
       lista.appendChild(li);
     });
