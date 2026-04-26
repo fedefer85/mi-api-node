@@ -29,11 +29,15 @@ async function cargarUsuarios() {
       // 💾 BOTÓN GUARDAR
       const btnGuardar = document.createElement("button");
       btnGuardar.textContent = "Guardar";
+      // agregeado para estilo
+      btnGuardar.className = "btn-guardar"
       btnGuardar.onclick = () => editarUsuario(usuario.id, input.value);
 
       // 🗑️ BOTÓN ELIMINAR
       const btnEliminar = document.createElement("button");
       btnEliminar.textContent = "Eliminar";
+      // agregeado para estilo
+      btnEliminar.className = "btn-eliminar"
       btnEliminar.onclick = () => eliminarUsuario(usuario.id);
 
       li.appendChild(spanId);
