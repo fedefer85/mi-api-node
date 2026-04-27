@@ -1,11 +1,15 @@
-/* Reset */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 🌙 Fondo oscuro */
+/* =========================
+   BASE
+========================= */
 body {
   font-family: Arial, sans-serif;
   background: #0f172a;
@@ -15,7 +19,9 @@ body {
   padding: 20px;
 }
 
-/* Contenedor */
+/* =========================
+   LAYOUT
+========================= */
 .container {
   width: 100%;
   max-width: 600px;
@@ -25,20 +31,23 @@ body {
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-/* Título */
 h1 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-/* Form */
+/* =========================
+   FORM
+========================= */
 .form {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-/* Inputs */
+/* =========================
+   INPUTS
+========================= */
 input {
   flex: 1;
   padding: 12px;
@@ -46,30 +55,63 @@ input {
   border: 1px solid #334155;
   background: #0f172a;
   color: white;
-  font-size: 16px; /* 👈 clave mobile */
+  font-size: 16px;
 }
 
-/* Botones */
+/* focus pro */
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59,130,246,0.5);
+}
+
+/* =========================
+   BOTONES (BASE)
+========================= */
 button {
   padding: 12px 15px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
+  transition: all 0.2s ease;
 }
 
-/* Crear */
+/* animaciones */
+button:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   BOTONES (TIPOS)
+========================= */
 .form button {
   background: #22c55e;
   color: white;
 }
 
-/* Lista */
+.btn-guardar {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-eliminar {
+  background: #ef4444;
+  color: white;
+}
+
+/* =========================
+   LISTA
+========================= */
 ul {
   list-style: none;
 }
 
-/* Item */
 li {
   display: flex;
   align-items: center;
@@ -77,29 +119,33 @@ li {
   margin-bottom: 12px;
 }
 
-/* ID */
 li span {
   width: 30px;
   font-weight: bold;
 }
 
-/* Botones item */
-li button:nth-child(3) {
-  background: #3b82f6;
-  color: white;
+/* =========================
+   ACCIONES
+========================= */
+.acciones {
+  display: flex;
+  gap: 10px;
 }
 
-li button:nth-child(4) {
-  background: #ef4444;
-  color: white;
+.acciones button {
+  min-width: 90px;
 }
 
-/* Hover */
-button:hover {
-  opacity: 0.9;
+/* =========================
+   FEEDBACK
+========================= */
+.guardado {
+  border: 2px solid #22c55e;
 }
 
-/* 📱 MOBILE PRO */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 500px) {
 
   body {
@@ -133,28 +179,16 @@ button:hover {
     gap: 6px;
   }
 
-  /* 🔥 fila de botones */
+  li span {
+    width: auto;
+  }
+
   .acciones {
     display: flex;
     gap: 8px;
   }
 
   .acciones button {
-    flex: 1; /* ocupan mitad cada uno */
+    flex: 1;
   }
-}
-
-.acciones {
-  display: flex;
-  gap: 10px;
-}
-
-.btn-guardar {
-  background: #3b82f6;
-  color: white;
-}
-
-.btn-eliminar {
-  background: #ef4444;
-  color: white;
 }

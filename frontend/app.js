@@ -31,7 +31,7 @@ async function cargarUsuarios() {
       btnGuardar.textContent = "Guardar";
       // agregeado para estilo
       btnGuardar.className = "btn-guardar"
-      btnGuardar.onclick = () => editarUsuario(usuario.id, input.value);
+      btnGuardar.onclick = () => editarUsuario(usuario.id, input.value, input);
 
       // 🗑️ BOTÓN ELIMINAR
       const btnEliminar = document.createElement("button");
@@ -126,7 +126,7 @@ async function eliminarUsuario(id) {
 //   }
 // }
 
-async function editarUsuario(id, nuevoNombre) {
+async function editarUsuario(id, nuevoNombre, inputElement) {
   if (!nuevoNombre) {
     alert("El nombre no puede estar vacío");
     return;
@@ -141,7 +141,12 @@ async function editarUsuario(id, nuevoNombre) {
       body: JSON.stringify({ nombre: nuevoNombre })
     });
 
-    cargarUsuarios();
+    // 🔥 feedback visual
+    inputElement.classList.add("guardado");
+
+    setTimeout(() => {
+      inputElement.classList.remove("guardado");
+    }, 1000);
 
   } catch (error) {
     console.error("Error:", error);
