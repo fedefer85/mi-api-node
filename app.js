@@ -5,6 +5,7 @@ const express = require("express");
 const cors = require("cors"); // agregado para el frontend
 
 const app = express();
+const { login } = require("./controllers/usuariosController");
 
 // MIDDLEWARES (SIEMPRE primero)
 app.use(cors()); // agregado para el frontend
@@ -19,6 +20,8 @@ app.use("/usuarios", usuariosRoutes);
 app.get("/", (req, res) => {
   res.send("API funcionando 🚀");
 });
+
+app.post("/login", login);
 //--------------
 
 // agregado para el errorHandler

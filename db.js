@@ -1,4 +1,4 @@
-const { Pool } = require("pg");
+// const { Pool } = require("pg");
 
 // const pool = new Pool({
 //   user: "postgres",
@@ -18,12 +18,40 @@ const { Pool } = require("pg");
 // });
 
 // MODIFICADO para usar en RENDER menos variables de environmet
-const pool = new Pool({
-connectionString: process.env.DATABASE_URL,
-ssl: {
-rejectUnauthorized: false
+// const pool = new Pool({
+// connectionString: process.env.DATABASE_URL,
+// ssl: {
+// rejectUnauthorized: false
+// }
+// });
+
+// module.exports = pool;
+
+// modificado para poder ir probando localmente durante el desarrollo
+const { Pool } = require("pg");
+
+let pool;
+
+if (process.env.DATABASE_URL) {
+  // 🌐 PRODUCCIÓN (Render)
+  pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  });
+  console.log("🌐 Conectado a DB de Render");
+} else {
+  // 💻 LOCAL
+  pool = new Pool({
+    user: "postgres",
+    host: "localhost",
+    database: "mi_api",
+    password: "Tino2019$poS",
+    port: 5433
+  });
+  console.log("💻 Conectado a DB local");
 }
-});
 
 module.exports = pool;
 
