@@ -300,8 +300,7 @@ const login = async (req, res) => {
 
     const token = jwt.sign(
       { id: user.id, nombre: user.nombre },
-      //process.env.JWT_SECRET || "secreo_local",
-      "secreto_local",
+      process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
 
