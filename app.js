@@ -1,6 +1,12 @@
 // agregado para no hardcodear credenciales
 require("dotenv").config();
 
+// es opcional agregar esta validacion en la etapa de AUTH y definicion
+// de la variable de entorno JWT_SECTET:
+if (!process.env.JWT_SECRET) {
+  throw new Error("JWT_SECRET no está definido");
+}
+
 const express = require("express");
 const cors = require("cors"); // agregado para el frontend
 
