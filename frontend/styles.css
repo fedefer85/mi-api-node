@@ -20,6 +20,29 @@ body {
 }
 
 /* =========================
+   SECCIONES (LOGIN / APP)
+========================= */
+#login-section,
+#app-section {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* LOGIN centrado */
+#login-section {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+#login-section input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* =========================
    LAYOUT
 ========================= */
 .container {
@@ -34,6 +57,10 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 15px;
 }
 
 /* =========================
@@ -105,6 +132,14 @@ button:active {
   color: white;
 }
 
+/* 🔐 botón logout */
+#app-section > button {
+  background: #ef4444;
+  color: white;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
 /* =========================
    LISTA
 ========================= */
@@ -117,6 +152,9 @@ li {
   align-items: center;
   gap: 10px;
   margin-bottom: 12px;
+  background: #0f172a;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 li span {
@@ -156,6 +194,10 @@ li span {
     padding: 15px;
   }
 
+  #login-section {
+    padding: 20px;
+  }
+
   h1 {
     font-size: 22px;
   }
@@ -184,7 +226,6 @@ li span {
   }
 
   .acciones {
-    display: flex;
     gap: 8px;
   }
 

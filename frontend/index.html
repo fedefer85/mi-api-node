@@ -11,20 +11,41 @@
 </head>
 <body>
 
-  <div class="container">
+  <!-- 🔐 LOGIN -->
+  <div id="login-section">
+    <form onsubmit="login(event)">
+      <h2>Login</h2>
 
-    <h1>Usuarios</h1>
+      <input id="login-nombre" placeholder="Nombre" />
+      <input id="login-password" type="password" placeholder="Password" />
 
-    <div class="form">
-      <input type="text" id="nombre" placeholder="Nombre">
-      <button onclick="crearUsuario()">Crear</button>
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+
+  <!-- 🔥 APP (oculta al inicio) -->
+  <div id="app-section" style="display: none;">
+
+    <button onclick="logout()">Cerrar sesión</button>
+
+    <hr>
+
+    <div class="container">
+
+      <h1>Usuarios</h1>
+
+      <div class="form">
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="crearUsuario()">Crear</button>
+      </div>
+
+      <ul id="lista-usuarios"></ul>
+
     </div>
-
-    <ul id="lista-usuarios"></ul>
 
   </div>
 
   <script src="app.js"></script>
 
 </body>
-</html>
