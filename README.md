@@ -1,103 +1,90 @@
-# API REST con CRUD completo de usuarios, persistencia en PostgreSQL y deploy en la nube.
+# App de Usuarios
 
-API REST desarrollada con Node.js y Express que permite gestionar usuarios (crear, listar, editar y eliminar) conectada a una base de datos PostgreSQL deployada en la nube.
-
-## Demo
-
-🔗 https://mi-api-node-xdfn.onrender.com/usuarios
-
-## Tecnologías utilizadas
-
-* Node.js
-* Express
-* PostgreSQL
-* Render (deploy)
-* Git & GitHub
-
-## Instalación
-
-1. Clonar el repositorio:
-
-```
-git clone https://github.com/fedefer85/mi-api-node.git
-```
-
-2. Instalar dependencias:
-
-```
-npm install
-```
-
-3. Crear archivo `.env`:
-
-```
-DATABASE_URL=tu_database_url
-PORT=3000
-```
-
-4. Ejecutar el servidor:
-
-```
-node app.js
-```
+Aplicación fullstack con autenticación JWT que permite gestionar usuarios (crear, editar y eliminar) con persistencia en base de datos.
 
 ---
 
-## Endpoints
+## 🔗 Demo
 
-### Obtener usuarios
-
-```
-GET /usuarios
-```
+Frontend: https://cheerful-platypus-c888c3.netlify.app/
+Backend: https://mi-api-node-xdfn.onrender.com
 
 ---
 
-### Crear usuario
+## 🚀 Funcionalidades
 
-```
-POST /usuarios
-```
-
-Body:
-
-```json
-{
-  "nombre": "Juan"
-}
-```
+- Login con autenticación JWT
+- Persistencia de sesión en el navegador (localStorage)
+- CRUD completo de usuarios
+- Edición inline de usuarios
+- Protección de rutas en backend
+- Interfaz responsive (mobile friendly)
 
 ---
 
-### Actualizar usuario
+## 🛠️ Tecnologías
 
-```
-PUT /usuarios/:id
-```
+### Frontend
+- HTML
+- CSS
+- JavaScript (Vanilla)
+
+### Backend
+- Node.js
+- Express
+
+### Base de datos
+- PostgreSQL
+
+### Deploy
+- Backend: Render
+- Frontend: Netlify
 
 ---
 
-### Eliminar usuario
+## 🔐 Autenticación
 
-```
-DELETE /usuarios/:id
-```
+- Uso de JSON Web Tokens (JWT)
+- Middleware de protección de rutas
+- Validación de credenciales con bcrypt
+- Token almacenado en localStorage
 
 ---
 
-## Estado del proyecto
+## 📡 API Endpoints
 
-✔ API funcional  
-✔ Deploy en producción  
-🔄 Frontend en desarrollo
+- POST /login → login de usuario
+- GET /usuarios → obtener usuarios (requiere token)
+- POST /usuarios → crear usuario (requiere token)
+- PUT /usuarios/:id → actualizar usuario (requiere token)
+- DELETE /usuarios/:id → eliminar usuario (requiere token)
 
-## Aprendizajes
+---
 
-* Desarrollo de APIs REST con Express
-* Integración con PostgreSQL en la nube
-* Uso de variables de entorno para configuración segura
-* Deploy de aplicaciones backend en Render
-* Manejo de errores y debugging en entorno real
+## ▶️ Cómo usar la app
+
+1. Ingresar nombre y contraseña en el login
+2. Acceder a la lista de usuarios
+3. Crear nuevos usuarios
+4. Editar directamente desde la lista
+5. Eliminar usuarios
+6. Cerrar sesión
+
+
+---
+
+## 📁 Estructura del proyecto
+
+/frontend
+  ├── index.html
+  ├── styles.css
+  └── app.js
+
+/backend
+  ├── app.js
+  ├── routes/
+  ├── controllers/
+  └── db.js
 
 ---
 
