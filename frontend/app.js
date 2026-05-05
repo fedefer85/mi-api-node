@@ -84,8 +84,9 @@ cargarUsuarios();
 async function crearUsuario() {
   const input = document.getElementById("nombre");
   const nombre = input.value;
+  const passwordInput = document.getElementById("password");
   const password = document.getElementById("password").value;
-
+  
   if (!nombre) {
     alert("Ingresá un nombre");
     return;
@@ -101,7 +102,10 @@ async function crearUsuario() {
       body: JSON.stringify({ nombre, password })
     });
 
+    // limpiar inputs
     input.value = "";
+    passwordInput.value = "";
+
     cargarUsuarios(); // 🔥 recarga la lista
 
   } catch (error) {
